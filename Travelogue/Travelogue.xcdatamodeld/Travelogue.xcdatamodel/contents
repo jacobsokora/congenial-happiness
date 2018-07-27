@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17F77" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Entry" representedClassName="Entry" syncable="YES">
+        <attribute name="content" attributeType="String" syncable="YES"/>
+        <attribute name="rawDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="rawImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <relationship name="trip" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="entries" inverseEntity="Trip" syncable="YES"/>
+    </entity>
+    <entity name="Trip" representedClassName="Trip" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="rawStartDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="entries" toMany="YES" deletionRule="Cascade" destinationEntity="Entry" inverseName="trip" inverseEntity="Entry" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Entry" positionX="-54" positionY="-9" width="128" height="120"/>
+        <element name="Trip" positionX="-63" positionY="-18" width="128" height="90"/>
+    </elements>
+</model>
